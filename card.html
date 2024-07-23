@@ -3,25 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Card container</title>
 
     <style>
-.card-container { display: flex; flex-wrap: wrap; gap: 20px; justify-content: space-around; }
+.card-container { display: flex; flex-wrap: wrap; gap: 20px; justify-content: space-between; }
 /* (Adjust the percentage as needed for the number of cards in a row ) */
-.card { flex: 1 1 calc(25% - 20px); box-sizing: border-box; border: 1px solid #E8E9ED; padding: 20px 20px 28px; background-color: transparent; transition: all 0.3s; display: flex; flex-direction: column; }
+.card { flex:0 0 calc(25% - 20px); box-sizing: border-box; border: 1px solid #E8E9ED; padding: 20px 20px 28px; background-color: transparent; transition: all 0.3s; display: flex; flex-direction: column; }
 .prod-img { position: relative; margin: 15px 0; }
 .prod-img:before { content: ""; display: block; padding-bottom: 85.5%; transition: all 0.3s; }
 .prod-img img { position: absolute; inset: 0; margin: auto; max-width: calc(100% - 20px); max-height: calc(100% - 20px); }
 .prod-content { display: flex; justify-content: space-between; align-items: center; width: 100%; }
 .card-title { font-size: 16px; color: #333; margin: 0; }
 .card-content { font-size: 1em; color: #666; margin: 0; padding-left: 10px; flex: 0 0 60px; }
-  </style>
 
-  
+.prod-content .price {flex:0 0 60px;}
+.grid-row-gap-30 { grid-row-gap: 30px; }
+
+@media screen and (max-width: 575px) { .card{ flex: 0 0 100%; } }
+@media screen and (min-width: 576px) { .card{ flex: 0 0 calc(50% - 20px) } }
+@media screen and (min-width: 992px) { .card{ flex: 0 0 calc(33.33% - 20px) } }
+@media screen and (min-width: 1200px) { .card{ flex: 0 0 calc(25% - 20px) } }
+
+ </style>
+
+
 </head>
 <body>
     
-    <div class="card-container">
+    <div class="card-container grid-row-gap-30 ">
         <div class="card">
           <div class="prod-img">
             <img src="/img/product-img1.webp" alt="Product Image 1">
