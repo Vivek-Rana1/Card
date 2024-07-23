@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+.card-container { display: flex; flex-wrap: wrap; gap: 20px; justify-content: space-around; }
+/* (Adjust the percentage as needed for the number of cards in a row ) */
+.card { flex: 1 1 calc(25% - 20px); box-sizing: border-box; border: 1px solid #E8E9ED; padding: 20px 20px 28px; background-color: transparent; transition: all 0.3s; display: flex; flex-direction: column; }
+.prod-img { position: relative; margin: 15px 0; }
+.prod-img:before { content: ""; display: block; padding-bottom: 85.5%; transition: all 0.3s; }
+.prod-img img { position: absolute; inset: 0; margin: auto; max-width: calc(100% - 20px); max-height: calc(100% - 20px); }
+.prod-content { display: flex; justify-content: space-between; align-items: center; width: 100%; }
+.card-title { font-size: 16px; color: #333; margin: 0; }
+.card-content { font-size: 1em; color: #666; margin: 0; padding-left: 10px; flex: 0 0 60px; }
+  </style>
+
+  
+</head>
+<body>
+    
+    <div class="card-container">
+        <div class="card">
+          <div class="prod-img">
+            <img src="/img/product-img1.webp" alt="Product Image 1">
+          </div>
+          <div class="prod-content">
+            <h2 class="card-title">Commodo consequat consequat cons  irure et</h2>
+            <p class="card-content"><span>₹</span>  32,460
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="prod-img">
+            <img src="/img/product-img2.webp" alt="Product Image 2">
+          </div>
+          <div class="prod-content">
+            <h2 class="card-title">Commodo consequat consequat cons  irure et</h2>
+            <p class="card-content"><span>₹</span>  32,460
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="prod-img">
+            <img src="/img/product-img3.webp" alt="Product Image 3">
+          </div>
+          <div class="prod-content">
+            <h2 class="card-title">Commodo consequat consequat cons  irure et</h2>
+            <p class="card-content"><span>₹</span>  32,460
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="prod-img">
+            <img src="/img/product-img4.webp" alt="Product Image 4">
+          </div>
+          <div class="prod-content">
+            <h2 class="card-title">Commodo consequat consequat cons  irure et</h2>
+            <p class="card-content"><span>₹</span>  32,460
+            </p>
+          </div>
+        </div>
+      </div>
+      
+
+</body>
+</html>
+  
