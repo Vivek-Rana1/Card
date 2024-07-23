@@ -24,9 +24,19 @@ span.articleTag{ position: absolute; background-color: green; color: white; top:
 @media (min-width: 768px) { ul.article-list.list-unstyled.grid-gap-30>li { width: calc(50% - 30px); } }
 @media (min-width: 992px) { ul.article-list.list-unstyled.grid-gap-30>li{ width: calc(33.33% - 30px); } }
 
+
+/* color comming from bottom */
+
+        /* .columnimg { position: relative; display: inline-block; overflow: hidden; }
+        .columnimg img { display: block; width: 100%; } */
+        .columnimg::after { content: ""; position: absolute; left: 0; bottom: 0; width: 100%; height: 0; background: linear-gradient(182deg, rgba(255, 255, 255, 0) 15%, rgba(3, 128, 83, 1) 100%); transition: all 0.3s ease; z-index: 1; }
+        .columnimg:hover::after { height: 50%; }
+
+
 </style>
 
 </head>
+
 <body>
     
     <section class="common-section homeArticle bg-lightGray secSpace-lg">
@@ -41,7 +51,7 @@ span.articleTag{ position: absolute; background-color: green; color: white; top:
                         <div class="productCard anim fadeInUp visible">
                             <a href="" class="productCard-thumb">
                                 <span class="articleTag">Review</span>
-                                <picture>
+                                <picture class="columnimg">
                                     <img class="" src="article-first.webp" data-src="article-first.webp" width="427" height="300" alt="Article First">
                                 </picture>
                             </a>
@@ -56,7 +66,7 @@ span.articleTag{ position: absolute; background-color: green; color: white; top:
                         <div class="productCard anim fadeInUp visible">
                             <a href="" class="productCard-thumb">
                                 <span class="articleTag">Q&amp;A</span>
-                                <picture>
+                                <picture class="columnimg">
                                     <img class="" src="article-second.webp" data-src="article-second.webp" width="427" height="300" alt="Article Second">
                                 </picture>
                             </a>
@@ -71,7 +81,7 @@ span.articleTag{ position: absolute; background-color: green; color: white; top:
                         <div class="productCard anim fadeInUp visible">
                             <a href="" class="productCard-thumb">
                                 <span class="articleTag">Design</span>
-                                <picture>
+                                <picture class="columnimg">  
                                     <img class="" src="article-third.webp" data-src="article-third.webp" width="427" height="300" alt="Article Third">
                                 </picture>
                             </a>
