@@ -1,2 +1,2 @@
 # Card
-this code is for responsive code without using media query
+this code is for responsive code with using media query
