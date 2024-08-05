@@ -5,35 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Card container</title>
 
-    <style>
+<style> 
+.container { max-width: 1380px; margin-left: auto; margin-right: auto; padding-left: 20px; padding-right: 20px; }
 .card-container { display: flex; flex-wrap: wrap; gap: 20px; justify-content: space-between; }
-/* (Adjust the percentage as needed for the number of cards in a row ) */
-.card { flex:0 0 calc(25% - 20px); box-sizing: border-box; border: 1px solid #E8E9ED; padding: 20px 20px 28px; background-color: transparent; transition: all 0.3s; display: flex; flex-direction: column; }
+.grid-row-gap-30 { grid-row-gap: 30px; }
+.card { flex:0 0 calc(25% - 20px); box-sizing: border-box;}
 .prod-img { position: relative; margin: 15px 0; }
+.prod-img{ border: 1px solid #E8E9ED; padding: 20px 20px 28px; background-color: transparent; transition: all 0.3s; display: flex; flex-direction: column; }
 .prod-img:before { content: ""; display: block; padding-bottom: 85.5%; transition: all 0.3s; }
 .prod-img img { position: absolute; inset: 0; margin: auto; max-width: calc(100% - 20px); max-height: calc(100% - 20px); }
+
 .prod-content { display: flex; justify-content: space-between; align-items: center; width: 100%; }
-.card-title { font-size: 16px; color: #333; margin: 0; }
-.card-content { font-size: 1em; color: #666; margin: 0; padding-left: 10px; flex: 0 0 60px; }
-
+.card-title { font-size: 16px; line-height: 20px; color: #333; margin: 0;font-weight:400; }
+.card-content { font-size: 1em; color: #666; margin: 0; padding-left: 10px; flex: 0 0 100px; }
 .prod-content .price {flex:0 0 60px;}
-.grid-row-gap-30 { grid-row-gap: 30px; }
 
+
+/* btn from bottom */
+.prod-img .btn { display: flex; justify-content: center;align-items: center; gap:5px;  position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); transition: bottom 0.3s ease; opacity: 0;  padding: 12px 0;}
+.prod-img:hover .btn { background-color: #038053; top:auto; bottom: 0px; opacity: 1; width: 100%; color: white; transition: all 0.3s ease; text-transform:uppercase; box-shadow: none; text-transform: uppercase; font-weight: 600; }
+.prod-img:hover img { transform: scale(0.9); transform: all .3s ease; }
+
+/* i create the ( sibling ) selector insted for the hover  */
+.prod-img:hover ~ .prod-content .card-title {color: #038053 }
+
+
+
+@media (max-width: 767px) { .herOverlay { padding: 30px 20px;} .homeCheckout .mediaCard { flex-wrap: wrap; } .mediaCard-thumb.checkOutMedia.anim.fadeInUp.visible { order: 0; flex: 0 0 300px; } svg{ padding-bottom: 20px; } }
 @media screen and (max-width: 575px) { .card{ flex: 0 0 100%; } }
 @media screen and (min-width: 576px) { .card{ flex: 0 0 calc(50% - 20px) } }
 @media screen and (min-width: 992px) { .card{ flex: 0 0 calc(33.33% - 20px) } }
 @media screen and (min-width: 1200px) { .card{ flex: 0 0 calc(25% - 20px) } }
 
- </style>
+</style>
+
 
 
 </head>
 <body>
-    
-    <div class="card-container grid-row-gap-30 ">
+   
+  
+  <section class="common-section bg-white secSpace-xl">   
+    <div class="container">
+    <!-- <div class="commonSecHead">
+        <h2>latest articals</h2>
+        <a href="" class="viewAll-btn">View all</a>
+    </div> -->
+
+    <div class="card-container grid-row-gap-30">
         <div class="card">
           <div class="prod-img">
             <img src="/img/product-img1.webp" alt="Product Image 1">
+
+<!-- this is for the obj coming from bottom -->
+            <a href="" class="btn btn-primary"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="13"  style="padding: 0;"  viewBox="0 0 14 13" fill="none"> <path d="M12.5117 4.75647C12.5055 3.17156 11.6739 1.68106 10.0346 1.15294C8.90893 0.789686 7.68275 0.991697 6.73047 2.35887C5.77819 0.991697 4.55201 0.789686 3.42634 1.15294C1.78681 1.68112 0.955287 3.1719 0.949273 4.75702C0.934109 7.90935 4.12836 10.3216 6.72966 11.4745H6.73128C9.33271 10.3215 12.5272 7.90904 12.5117 4.75647Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"></path> </svg> Add to wishlist</a>   
+
           </div>
           <div class="prod-content">
             <h2 class="card-title">Commodo consequat consequat cons  irure et</h2>
@@ -41,9 +67,14 @@
             </p>
           </div>
         </div>
+
+
+        
         <div class="card">
           <div class="prod-img">
             <img src="/img/product-img2.webp" alt="Product Image 2">
+            <a href="" class="btn btn-primary"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="13"  style="padding: 0;"  viewBox="0 0 14 13" fill="none"> <path d="M12.5117 4.75647C12.5055 3.17156 11.6739 1.68106 10.0346 1.15294C8.90893 0.789686 7.68275 0.991697 6.73047 2.35887C5.77819 0.991697 4.55201 0.789686 3.42634 1.15294C1.78681 1.68112 0.955287 3.1719 0.949273 4.75702C0.934109 7.90935 4.12836 10.3216 6.72966 11.4745H6.73128C9.33271 10.3215 12.5272 7.90904 12.5117 4.75647Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"></path> </svg> Add to wishlist</a>   
+
           </div>
           <div class="prod-content">
             <h2 class="card-title">Commodo consequat consequat cons  irure et</h2>
@@ -54,6 +85,8 @@
         <div class="card">
           <div class="prod-img">
             <img src="/img/product-img3.webp" alt="Product Image 3">
+            <a href="" class="btn btn-primary"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="13"  style="padding: 0;"  viewBox="0 0 14 13" fill="none"> <path d="M12.5117 4.75647C12.5055 3.17156 11.6739 1.68106 10.0346 1.15294C8.90893 0.789686 7.68275 0.991697 6.73047 2.35887C5.77819 0.991697 4.55201 0.789686 3.42634 1.15294C1.78681 1.68112 0.955287 3.1719 0.949273 4.75702C0.934109 7.90935 4.12836 10.3216 6.72966 11.4745H6.73128C9.33271 10.3215 12.5272 7.90904 12.5117 4.75647Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"></path> </svg> Add to wishlist</a>   
+
           </div>
           <div class="prod-content">
             <h2 class="card-title">Commodo consequat consequat cons  irure et</h2>
@@ -64,6 +97,8 @@
         <div class="card">
           <div class="prod-img">
             <img src="/img/product-img4.webp" alt="Product Image 4">
+            <a href="" class="btn btn-primary"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="13"  style="padding: 0;"  viewBox="0 0 14 13" fill="none"> <path d="M12.5117 4.75647C12.5055 3.17156 11.6739 1.68106 10.0346 1.15294C8.90893 0.789686 7.68275 0.991697 6.73047 2.35887C5.77819 0.991697 4.55201 0.789686 3.42634 1.15294C1.78681 1.68112 0.955287 3.1719 0.949273 4.75702C0.934109 7.90935 4.12836 10.3216 6.72966 11.4745H6.73128C9.33271 10.3215 12.5272 7.90904 12.5117 4.75647Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"></path> </svg> Add to wishlist</a>   
+
           </div>
           <div class="prod-content">
             <h2 class="card-title">Commodo consequat consequat cons  irure et</h2>
@@ -72,6 +107,12 @@
           </div>
         </div>
       </div>
+
+    </div>
+
+
+ </section>
+   
       
 
 </body>
