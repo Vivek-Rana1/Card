@@ -1,14 +1,16 @@
+<!-- every thing is  done also that green -->
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Artical</title>
-<link rel="stylesheet" href="style.css">
+<!-- <link rel="stylesheet" href="style.css"> -->
 
 <style>
     /* third section */
-.commonSecHead {padding-bottom: 20px;display: flex; align-items: center; justify-content: space-between; }
 ul.article-list.list-unstyled.grid-gap-30 { display: flex; flex-wrap: wrap; gap: 30px; }
 /* For the card width  */
 ul.article-list.list-unstyled.grid-gap-30>li { width: calc(100%); }
@@ -17,20 +19,26 @@ a.productCard-thumb { position: relative;overflow: hidden; }
 span.articleTag{ position: absolute; background-color: green; color: white; top:20px; left: 20px; z-index: 2; padding: 5px 10px; line-height: 1; text-transform: uppercase; font-size: 12px; }
 .productCard .productCard-thumb picture { position: absolute; width: 100%; height: 100%; left: 0; top: 0; transform: scale(1); transition: all 0.3s ease-in-out; }
 .productCard .productCard-thumb img { /* min-width: 100%; */ width: 100%; height: 100%; object-fit: cover; object-position: center; }
-.homeArticle .article-list .productCard .productCard-body { padding: 30px 0 0 0; }
+.homeArticle .article-list .productCard .productCard-body { padding: 50px 0 0 0; }
 .homeArticle .article-list .productCard .title { margin: 0 0 10px 0; font-size: 20px; font-weight: 600; line-height: 1.167; }
 .homeArticle .article-list .productCard p { color: rgba( 14, 60, 103, 0.6); overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-box-orient: vertical; margin-bottom: 30px; line-height: 1.2; }
 .homeArticle .article-list .productCard .publishDate { font-size: 12px; font-weight: 600; font-style: italic; color: rgba( 14, 60, 103, 0.4); padding-top: 20px; border-top: 1px solid rgba( 14, 60, 103, 0.1); line-height: 1.33; }
+.productCard-body{ position: relative; }
+
+/* this isnfor the color coming from bottom in hover */
+    
+.columnimg {  position: relative; display: block; overflow: hidden; }
+ .columnimg img { width: 100%; height: 100%; object-fit: cover; }
+ .columnimg::after { content:""; position: absolute; left: 0; bottom: 0; width: 100%; height: 0; background: linear-gradient(182deg, rgba(255, 255, 255, 0) 15%, rgba(3, 128, 83, 1) 100%); transition: all 0.3s ease; z-index: 11; }
+ ul.article-list.list-unstyled.grid-gap-30{ padding: 0; }
+
+.productCard-thumb:hover img, .productCard-thumb:focus img { transform: scale(1.1);  }
+
+.prod-img:hover img { transform: scale(0.9); transform: all .3s ease; }
+.columnimg:hover::after { height: 50%; }
+
 @media (min-width: 768px) { ul.article-list.list-unstyled.grid-gap-30>li { width: calc(50% - 30px); } }
 @media (min-width: 992px) { ul.article-list.list-unstyled.grid-gap-30>li{ width: calc(33.33% - 30px); } }
-
-
-/* color comming from bottom */
-
-        /* .columnimg { position: relative; display: inline-block; overflow: hidden; }
-        .columnimg img { display: block; width: 100%; } */
-        .columnimg::after { content: ""; position: absolute; left: 0; bottom: 0; width: 100%; height: 0; background: linear-gradient(182deg, rgba(255, 255, 255, 0) 15%, rgba(3, 128, 83, 1) 100%); transition: all 0.3s ease; z-index: 1; }
-        .columnimg:hover::after { height: 50%; }
 
 
 </style>
@@ -41,10 +49,10 @@ span.articleTag{ position: absolute; background-color: green; color: white; top:
     
     <section class="common-section homeArticle bg-lightGray secSpace-lg">
         <div class="container">
-            <div class="commonSecHead">
+            <!-- <div class="commonSecHead">
                 <h2>latest articals</h2>
                 <a href="" class="viewAll-btn">View all</a>
-            </div>
+            </div> -->
             <div class="commonSeContent">
                 <ul class="article-list list-unstyled grid-gap-30">
                     <li>
@@ -56,7 +64,7 @@ span.articleTag{ position: absolute; background-color: green; color: white; top:
                                 </picture>
                             </a>
                             <div class="productCard-body">
-                                <h3 class="title"><a href="javascript:void()">Lorem Ipsum&nbsp;is simply dummy text of the printing and typesetting.</a></h3>
+                                <h3 class="title"><a href=" ">Lorem Ipsum&nbsp;is simply dummy text of the printing and typesetting.</a></h3>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit .</p>
                                 <div class="publishDate">Feb 26, 2024</div>
                             </div>
@@ -71,7 +79,7 @@ span.articleTag{ position: absolute; background-color: green; color: white; top:
                                 </picture>
                             </a>
                             <div class="productCard-body">
-                                <h3 class="title"><a href="javascript:void()">Lorem Ipsum&nbsp;is simply dummy text of the printing and typesetting.</a></h3>
+                                <h3 class="title"><a href="">Lorem Ipsum&nbsp;is simply dummy text of the printing and typesetting.</a></h3>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit .</p>
                                 <div class="publishDate">Jan 29, 2024</div>
                             </div>
